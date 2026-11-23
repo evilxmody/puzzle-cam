@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PUZZLE CAM</title>
+<link rel="stylesheet" href="style.css"></head><body data-s="start">
+
+<section class="sec" id="start">
+  <p class="tag">GESTURE PUZZLE</p>
+  <h1>PUZZLE CAM</h1>
+  <p>FRAME YOURSELF. BREAK THE IMAGE. SOLVE IT.</p>
+  <ol class="glass">
+    <li><b>Allow camera access.</b> Video stays in this browser.</li>
+    <li><b>Show both hands.</b> Thumb and index fingertips of both hands mark the frame corners.</li>
+    <li><b>Frame your face.</b> The frame spans the two hand corners.</li>
+    <li><b>Hold still for a second.</b> Capture counts down 3, 2, 1.</li>
+    <li><b>Solve with your hand.</b> Pinch a tile beside the gap, slide it in, release.</li>
+  </ol>
+  <div class="row"><select id="lvl" aria-label="Difficulty"><option value="3">Easy 3×3</option><option value="4">Medium 4×4</option><option value="5">Hard 5×5</option></select>
+  <button class="pri" id="go">START CAMERA</button></div>
+  <p class="err" id="err"></p>
+</section>
+
+<section class="sec" id="cam"></section>
+<div id="chip" class="glass">WAITING FOR HANDS</div>
+<div id="hint"><span id="hintTxt">Raise both hands.</span><button id="manual">Capture now</button></div>
+<div id="stage"><video id="vid" playsinline muted></video><canvas id="ov"></canvas></div>
+<div id="count"></div>
+
+<section class="sec" id="preview">
+  <p class="tag">CAPTURED</p>
+  <img id="shot" alt="Your captured frame"><p id="pinfo" class="tag"></p>
+  <div class="row"><button id="retake">RETAKE</button><button class="pri" id="begin">START PUZZLE</button></div>
+</section>
+
+<section class="sec" id="game">
+  <div id="hud"><div class="glass">Level <b id="hl"></b></div><div class="glass">Moves <b id="hm">0</b></div><div class="glass">Time <b id="ht">0:00</b></div></div>
+  <div id="bar"><i></i></div>
+  <div id="board"></div>
+  <div class="row">
+    <button id="bRestart">Restart</button><button id="bShuffle">Shuffle</button><button id="bCam" class="on">Camera on</button><button id="bSnd" class="on">Sound on</button><button id="bPause">Pause</button>
+  </div>
+</section>
+
+<div id="cur"></div>
+<div class="ov" id="pause"><div class="big">PAUSED</div><button class="pri" id="resume">RESUME</button></div>
+<div class="ov" id="win"><div class="big">SOLVED</div><p id="wtxt"></p><div class="row"><button class="pri" id="again">PLAY AGAIN</button><button id="newp">NEW PHOTO</button></div></div>
+<div id="flash"></div>
+
+<script type="module" src="app.js"></script>
+</body></html>
